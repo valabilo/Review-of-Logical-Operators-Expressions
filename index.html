@@ -18,7 +18,9 @@
         <div class="mb-5">
             Enter a value of x:
             <input type="number" id="xInput">
-            <button class="btn bg-secondary text-warning" onclick="checka();checkb();checkc();checkd();checke();checkf();checkg();checkh();checki();checkj();">Check</button>
+            <button class="btn bg-secondary text-warning" onclick="myFunction();checka();checkb();checkc();checkd();checke();checkf();checkg();checkh();checki();checkj();">Check</button>
+            <h3>You enter number <span class="fw-bold text-decoration-underline" id="demo"></span></h3>
+            
         </div>
         <table class="table table-bordered table-light table-striped text-start">
             <tbody>
@@ -83,6 +85,11 @@
 
 
     <script>
+        function myFunction() {
+          var x = document.getElementById("xInput").value;
+          document.getElementById("demo").innerHTML = x;
+        }
+
         function checka() {
           var x = document.getElementById("xInput").value;
           var result1 = document.getElementById("result1");
@@ -93,7 +100,7 @@
             result1.innerHTML = "FALSE";
           }
         }
-  
+        
         function checkb() {
           var x = document.getElementById("xInput").value;
           var result2 = document.getElementById("result2");
