@@ -14,12 +14,11 @@
     <div class="container justify-content-center text-center">
         <h1>Review of Logical Operators Expressions</h1>
         <h3>Evaluate whether each expression below will return TRUE or FALSE.</h3>
-        <p class="text-decoration-underline fw-bold">"THE DEFAULT VALUE OF X IS 0"</p>
         <div class="mb-5">
             Enter a value of x:
-            <input type="number" id="xInput">
-            <button class="btn bg-secondary text-warning" onclick="myFunction();checka();checkb();checkc();checkd();checke();checkf();checkg();checkh();checki();checkj();">Check</button>
-            <h3>You enter number <span class="fw-bold text-decoration-underline" id="demo"></span></h3>
+            <input type="number" id="xInput" value="0" placeholder="0">
+            <button class="btn bg-secondary text-warning" type="submit" onclick="myFunction();checka();checkb();checkc();checkd();checke();checkf();checkg();checkh();checki();checkj();">Check</button>
+            <h3>You enter number <span class="fw-bold text-decoration-underline" id="demo">0</span></h3>
             
         </div>
         <table class="table table-bordered table-light table-striped text-start">
@@ -30,52 +29,52 @@
                     <th>Explanation</th>
                 </tr>
                 <tr>
-                    <td>x == 6</td>
+                    <td><p id="a">x == 6</p></td>
                     <td><b id="result1"></b></td>
                     <td>Equality operator ( == ) checks if x is equal to 6.</td>
                 </tr>
                     <tr>
-                    <td>x === "5"</td>
+                    <td><p id="b">x === "5"</p></td>
                     <td><b id="result2"></b></td>
                     <td>Strict equality operator ( === ) checks if x is equal to the string "5", which is not the same as the number 5.</td>
                 </tr>
                 <tr>
-                    <td>x === 5</td>
+                    <td><p id="c">x === 5</p></td>
                     <td><b id="result3"></b></td>
                     <td>Strict equality operator ( === ) checks if x is equal to the number 5.</td>
                 </tr>
                 <tr>
-                    <td>x != 5</td>
+                    <td><p id="d">x != 5</p></td>
                     <td><b id="result4"></b></td>
                     <td>Inequality operator ( != ) checks if x is not equal to 5.</td>
                 </tr>
                 <tr>
-                    <td>x &lt; 10</td>
+                    <td><p id="e">x < 10</p></td>
                     <td><b id="result5"></b></td>
                     <td>Less than operator ( &lt; ) checks if x is less than 10.</td>
                 </tr>
                 <tr>
-                    <td>x &gt; 5</td>
+                    <td><p id="f">x > 5</p></td>
                     <td><b id="result6"></b></td>
                     <td>Greater than operator ( &gt; ) checks if x is greater than 5.</td>
                 </tr>
                 <tr>
-                    <td>x ≤ 5</td>
+                    <td><p id="g">x ≤ 5</p></td>
                     <td><b id="result7"></b></td>
                     <td>Less than or equal to operator ( ≤ ) checks if x is less than or equal to 5.</td>
                 </tr>
                 <tr>
-                    <td>x ≥ 5 &amp;&amp; x != 10</td>
+                    <td><p id="h">x ≥ 5 && x != 10</p></td>
                     <td><b id="result8"></b></td>
                     <td>Logical AND operator ( &amp;&amp; ) checks if both expressions are true: x is greater than or equal to 5 AND x is not equal to 10.</td>
                 </tr>
                 <tr>
-                    <td>x != 5 || x &lt; 10</td>
+                    <td><p id="i">x != 5 || x < 10</p></td>
                     <td><b id="result9"></b></td>
                     <td>Logical OR operator ( || ) checks if at least one expression is true: x is not equal to 5 OR x is less than 10.</td>
                 </tr>
                 <tr>
-                    <td>!(x &gt; (5 + x))</td>
+                    <td><p id="j">!(x > (5 + x))</p></td>
                     <td><b id="result10"></b></td>
                     <td>Logical NOT operator ( ! ) negates the expression inside the parentheses:</td>
                 </tr>
@@ -85,11 +84,49 @@
 
 
     <script>
+      //expression input
         function myFunction() {
           var x = document.getElementById("xInput").value;
           document.getElementById("demo").innerHTML = x;
-        }
 
+          var x = document.getElementById("xInput").value;
+          document.getElementById("a").innerHTML = x + ' == 6';
+       
+          var x = document.getElementById("xInput").value;
+          document.getElementById("b").innerHTML = x + ' === "5"';
+       
+        
+          var x = document.getElementById("xInput").value;
+          document.getElementById("c").innerHTML = x + ' === 5';
+       
+        
+          var x = document.getElementById("xInput").value;
+          document.getElementById("d").innerHTML = x + ' != 5';
+      
+     
+          var x = document.getElementById("xInput").value;
+          document.getElementById("e").innerHTML = x + ' &lt; 10';
+        
+       
+          var x = document.getElementById("xInput").value;
+          document.getElementById("f").innerHTML = x + ' &gt; 5';
+       
+        
+          var x = document.getElementById("xInput").value;
+          document.getElementById("g").innerHTML = x + ' ≤ 5';
+      
+          var x = document.getElementById("xInput").value;
+          document.getElementById("h").innerHTML = x + ' ≥ 5 &amp;&amp; '+ x + ' != 10';
+       
+          var x = document.getElementById("xInput").value;
+          document.getElementById("i").innerHTML = x + ' != 5 &amp;&amp; ' + x + ' != 10';
+       
+          var x = document.getElementById("xInput").value;
+          document.getElementById("j").innerHTML = '!(' + x + ' &gt; (5 + ' + x + ' ))';
+        }
+        
+
+      //value | boolean result
         function checka() {
           var x = document.getElementById("xInput").value;
           var result1 = document.getElementById("result1");
